@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="../../imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/all.min.css" />
+    <link rel="stylesheet" href="../register.css" />
+  </head>
+  <body>
+    <div
+      class="signup vh-100 w-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="row w-100 signup_inside align-items-center">
+        <form class="col-md-5">
+            <div class="title">
+                <div class="logo text-center">
+                    <img src="../../imgs/logo.png" alt="">
+                </div>
+                
+            </div>
+          <div class="form_width">
+        
+            <div class="form-group mb-3">
+                <h2 class="text-center">
+                    Login
+                </h2>
+              <label for="emailLogin" class="mb-1">Email address*</label>
+              <input
+                type="email"
+                class="form-control inptLogin"
+                id="emailLogin"
+                aria-describedby="emailHelp"
+                placeholder="Enter Your Email Address"
+              />
+              <div class="alertDiv"></div>
+
+            </div>
+            <div class="form-group mb-3">
+              <label for="passwordLogin" class="mb-1">Password*</label>
+              <input
+                type="password"
+                class="form-control inptLogin"
+                id="passwordLogin"
+                placeholder="Enter Your Password"
+              />
+              <div class="alertDiv"></div>
+            </div>
+            <button type="submit" id="loginBtn" class="btn btn-dark d-block mt-4 w-100 py-2">
+              Login
+            </button>
+            <div class="link mt-3 text-center">
+              <span>Don't have an account?</span>
+              <a href="../signup/signup.html">Signup</a>
+            </div>
+          </div>
+        </form>
+
+        <div class="image col-md-7">
+          <img
+            src="../../imgs/27635.jpg"
+            class="w-100 d-block"
+            alt="signup page"
+          />
+
+          <div class="box"></div>
+
+          <div class="content">
+            <h2>
+              start sharing your opinions <br />
+              with your friends.
+            </h2>
+            <section>
+              Login With your account and get full access to all features in Our
+              Friends social media app.
+            </section>
+            <div class="content_users d-flex align-items-center gap-3 mt-4">
+              <div>
+                <img src="../../imgs/27635.jpg" alt="" />
+                <img src="../../imgs/pexels-kooldark-7368063.jpg" alt="" />
+                <img src="../../imgs/pexels-olly-3837268.jpg" alt="" />
+                <img src="../../imgs/pexels-hassanph-4294054.jpg" alt="" />
+              </div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <p>
+                    From 200+ Reviews
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../register.js"></script>
+  </body>
+</html>

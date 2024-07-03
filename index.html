@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="loading">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <header id="header"></header>
+
+    <div id="suggest_overlay"></div>
+    <div class="container_section">
+      <div class="row gy-3">
+        <div class="mb-2 col-md-4 col-lg-3" id="lefter"></div>
+
+        <div class="mb-2 col-md-8 posts_center col-lg-5">
+          <div id="post"></div>
+          <div id="post_container"></div>
+          <div class="firstView">
+            <h5>
+              There are no posts yet,<br />follow someone to see their posts
+            </h5>
+          </div>
+        </div>
+        <div class="mb-2 col-md-12 col-lg-4 pe-2 friend_parent">
+          <section id="suggestions">suggestions</section>
+          <h5 class="text-center mb-4 mt-3">
+            Suggestion For You <img src="imgs/celebration.png" alt="" />
+          </h5>
+          <div class="friends_zone"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="module">
+      import { leftLinks } from "./links/links.js";
+      let lefter = document.getElementById("lefter");
+      lefter.innerHTML = leftLinks({
+        Home: "index.html",
+        friends: "friends/friends.html",
+        saved: "savedposts/sPost.html",
+        favourite: "favouritepost/fPost.html",
+        sponsorImg: "imgs/blue.png"
+      });
+    </script>
+
+    <script type="module">
+      import { headerFun } from "./header/header.js";
+      let header = document.getElementById("header");
+      header.innerHTML = headerFun({
+        profile: "profile/profile.html",
+        chatPage: "chat/chat.html",
+        userProfile: "users/user.html",
+        imgLogo: "imgs/logo.png",
+        imgUser: "imgs/profileImage.png",
+        Home: "index.html",
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/handleHomePosts.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

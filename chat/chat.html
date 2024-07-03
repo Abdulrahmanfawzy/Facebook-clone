@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Chat</title>
+    <link rel="shortcut icon" href="../imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="loading">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- <header id="header"></header> -->
+
+    
+
+    <div class="container_sections">
+      <div class="row m-0">
+        <div class="col-md-4 border-end" id="users">
+          <div class="back">
+            <a href="../index.html">
+              <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <h5>
+              <i class="fa-regular fa-comments"></i>
+              Messages
+            </h5>
+          </div>
+          <div class="search_users">
+            <div class="search_bg border position-relative">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="search_users"
+                placeholder="Search on user..."
+              />
+              <div id="all_users_search"></div>
+              <div id="no_users">No Result Founded</div>
+            </div>
+          </div>
+
+          <div id="user_links_div"></div>
+        </div>
+        <div class="col-md-8 position-relative" id="chat_div">
+          <div id="chat_user"></div>
+
+          <div id="messages">
+            <img id="image_talk" src="../imgs/talk.svg" alt="" />
+          </div>
+
+          <div id="chat_at_bottom" class="border-top">
+            <div class="d-flex gap-3 align-items-center">
+              <div class="chat_icon_face position-relative text-center">
+                <div class="emoji_icons"></div>
+                <i id="smile_icon" class="fa-regular fa-face-laugh"></i>
+              </div>
+              <div class="w-100">
+                <input
+                  type="text"
+                  id="message_inpt"
+                  placeholder="Write Your Message..."
+                />
+              </div>
+              <div class="text-center">
+                <i id="send" class="fa-solid fa-paper-plane"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script type="module">
+      import { headerFun } from "../header/header.js";
+      let header = document.getElementById("header");
+      header.innerHTML = headerFun({
+        chatPage: "../chat/chat.html",
+        imgLogo: "../imgs/logo.png",
+        imgUser: "../imgs/user.jpg",
+      });
+    </script> -->
+
+    <!-- <script type="module" src="../js/main.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="chat.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+@font-face {
+    font-family: titleFont;
+    src: url(../Poppins/Poppins-Medium.ttf);
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* :root{
+    --mainColor: 
+} */
+
+body {
+  background: #e7e8ea;
+}
+
+.signup .signup_inside {
+  background: #fff;
+}
+.signup_inside .image {
+  padding: 0;
+  position: relative;
+}
+.image img {
+  object-fit: cover;
+  object-position: 25% 25%;
+  height: 100vh;
+}
+.form_width {
+  width: 90%;
+  margin: auto;
+}
+.form_width h2{
+  margin-bottom: 40px!important;
+}
+input::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+label {
+  font-size: 14px;
+  color: #777;
+}
+
+.image .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #FFF;
+    padding-top: 100px;
+}
+.content h2{
+    font-family: titleFont;
+    text-transform: capitalize;
+    font-size: 3rem;
+}
+.content section{
+    font-size: 18px;
+}
+.box{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background: #FFF;
+    
+}
+.content_users img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+}
+.stars i{
+    color: yellow;
+    font-size: 14px;
+}
+.content p{
+    margin-bottom: 0;
+    font-size: 14px;
+}
+.title .logo{
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    width: 70px;
+    margin: auto;
+}
+.title .logo img{
+    width: 100%;
+}
+.alertDiv{
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.emailValidAlert{
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+@media (max-width: 991px){
+    form h2{
+        margin-top: 100px;
+        margin-bottom: 30px;
+      }
+      form {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+}
+
+@media (max-width: 768px) {
+  form {
+    height: 100vh;
+    
+  }
+  form h2{
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+  .image {
+    display: none;
+  }
+}

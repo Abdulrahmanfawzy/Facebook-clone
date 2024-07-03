@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved Posts</title>
+    <link rel="shortcut icon" href="../imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="loading">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <header id="header"></header>
+
+    <div class="container_section">
+      <div class="row">
+        <div class="col-md-3" id="lefter"></div>
+
+        <div class="col-md-9" id="postSaved">
+          <h5 class="dataFav">
+            There are no saved posts yet
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { leftLinks } from "../links/links.js";
+      let lefter = document.getElementById("lefter");
+      lefter.innerHTML = leftLinks({
+        Home: "../index.html",
+        friends: "../friends/friends.html",
+        saved: "../savedposts/sPost.html",
+        favourite: "../favouritepost/fPost.html",
+        sponsorImg: "../imgs/blue.png"
+
+      });
+    </script>
+
+    <script type="module">
+      import { headerFun } from "../header/header.js";
+      let header = document.getElementById("header");
+      header.innerHTML = headerFun({
+        profile: "../profile/profile.html",
+        imgLogo: "../imgs/logo.png",
+        imgUser: "../imgs/profileImage.png",
+        userProfile: "../users/user.html",
+        chatPage: "../chat/chat.html",
+        Home: "../index.html",
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="sPost.js"></script>
+  </body>
+</html>

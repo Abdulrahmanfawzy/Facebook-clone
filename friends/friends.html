@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends</title>
+    <link rel="shortcut icon" href="../imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="loading">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <header id="header"></header>
+
+    <div class="container_section">
+      <div class="row">
+        <div class="mb-2 col-md-4 col-lg-4" id="lefter">
+        </div>
+        <div class="mb-2 col-md-8 col-lg-4 allUsers">
+            <h5 class="text-center userIcon mb-4">All Users <span><i class="fa-solid fa-people-group"></i></span></h5>
+            <div id="all_users"></div>
+        </div>
+        <div class="mb-2 col-md-12 col-lg-4 px-0 ps-md-2">
+          <div class="followersParent">
+            <h5 class="mb-4">Users Followed you <i class="fa-solid fa-user-plus"></i></h5>
+            <div id="followersDiv">
+              <h5 id="noOneFollowed">
+                No one has followed you yet
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { leftLinks } from "../links/links.js";
+      let lefter = document.getElementById("lefter");
+      lefter.innerHTML = leftLinks({
+        Home: "../index.html",
+        friends: "../friends/friends.html",
+        saved: "../savedposts/sPost.html",
+        favourite: "../favouritepost/fPost.html",
+        sponsorImg: "../imgs/blue.png"
+      });
+    </script>
+
+    <script type="module">
+      import { headerFun } from "../header/header.js";
+      let header = document.getElementById("header");
+      header.innerHTML = headerFun({
+        userProfile: "../users/user.html",
+        imgLogo: "../imgs/logo.png",
+        imgUser: "../imgs/user.jpg",
+        chatPage: "../chat/chat.html",
+        Home: "../index.html",
+      });
+    </script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="friends.js"></script>
+  </body>
+</html>

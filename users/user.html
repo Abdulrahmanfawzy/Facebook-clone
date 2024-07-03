@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user page</title>
+    <style>
+      .loading {
+        background: #ffffff79 !important;
+      }
+      .container_section {
+        margin-top: 30px !important;
+      }
+      #post {
+        margin-bottom: 10px !important;
+      }
+    </style>
+    <link rel="shortcut icon" href="../imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <div class="loading">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div id="profileImage" class="col-md-12"></div>
+
+    <div class="container_section">
+      <div class="row">
+        <div class="col-md-3" id="lefter"></div>
+
+        <div class="col-md-6">
+          <div id="post" class="mb-5"></div>
+          <div id="post_container"></div>
+          <h5 class="noPosts">There are no posts yet,</h5>
+          <div id="post_share"></div>
+        </div>
+
+        <div class="col-md-3 profile_postion">
+          <div class="close_profile">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </div>
+          <div class="open_profile">Profile Details</div>
+          <div id="profile">
+            <h4 class="text-center mt-2">Intro</h4>
+            <div class="no_intro mt-3 pb-3 text-center">
+              <h6>No Into has been added yet</h6>
+            </div>
+            <div id="bio_display_val"></div>
+
+            <div class="result_Bio">
+              <textarea
+                id="bio_inpt"
+                class="border mt-2"
+                placeholder="Describe who you are"
+              ></textarea>
+              <button id="bio_cancel" class="btn btn-light me-2">Cancel</button>
+              <button id="bio_save" class="btn btn-primary">Save</button>
+            </div>
+            <button id="edit_Bio_btn">Edit Bio</button>
+          </div>
+
+          <div id="details_display_result" class="mt-3">
+            <h5 class="text-center mt-2">Profile Details</h5>
+            <div id="no_details" class="pb-3 pt-2 text-center">
+              <h6>No details added yet</h6>
+            </div>
+            <div class="education_div"></div>
+            <div class="work_div"></div>
+            <div class="liveIn_div"></div>
+            <div class="from_div"></div>
+            <div class="relation_div"></div>
+            <div id="details_display_val" class="mt-3 mb-2 border">
+              <h5 class="text-center mb-3 mt-2">Edit Details</h5>
+              <div class="mb-2">
+                <label class="pb-1" for="eductaion_inpt">Add Education:</label>
+                <input
+                  type="text"
+                  class="form-control inpts"
+                  data-pre_display_details='<i class="fa-solid fa-graduation-cap"></i> Education is'
+                  data-info="education_div"
+                  id="eductaion_inpt"
+                />
+              </div>
+              <div class="mb-2">
+                <label class="pb-1" for="work_inpt">Add Work:</label>
+                <input
+                  type="text"
+                  class="form-control inpts"
+                  data-pre_display_details='<i class="fa-solid fa-briefcase"></i> Works at'
+                  data-info="work_div"
+                  id="work_inpt"
+                />
+              </div>
+              <div class="mb-2">
+                <label class="pb-1" for="city_in_inpt"
+                  >Add City lives in:</label
+                >
+                <input
+                  type="text"
+                  class="form-control inpts"
+                  data-pre_display_details='<i class="fa-solid fa-location-dot"></i> Lives in'
+                  data-info="liveIn_div"
+                  id="city_in_inpt"
+                />
+              </div>
+              <div class="mb-2">
+                <label class="pb-1" for="city_from_inpt">Add City From:</label>
+                <input
+                  type="text"
+                  class="form-control inpts"
+                  data-info="from_div"
+                  data-pre_display_details='<i class="fa-solid fa-house"></i> From'
+                  id="city_from_inpt"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="pb-1" for="relationship">Add Relationship:</label>
+                <input
+                  type="text"
+                  class="form-control inpts"
+                  data-pre_display_details='<i class="fa-solid fa-heart"></i>'
+                  data-info="relation_div"
+                  id="relationship"
+                />
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-primary" id="save_details_btn">
+                  Save
+                </button>
+                <button class="btn btn-light me-2" id="cancel_details_btn">
+                  Cancel
+                </button>
+              </div>
+            </div>
+            <div class="into_btns">
+              <button id="edit_details_btn">Edit details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { leftLinks } from "../links/links.js";
+      let lefter = document.getElementById("lefter");
+      lefter.innerHTML = leftLinks({
+        Home: "../index.html",
+        friends: "../friends/friends.html",
+        saved: "../savedposts/sPost.html",
+        favourite: "../favouritepost/fPost.html",
+        sponsorImg: "../imgs/blue.png"
+      });
+    </script>
+
+    <script type="module">
+      import { headerFun } from "../header/header.js";
+      let header = document.getElementById("header");
+      header.innerHTML = headerFun({
+        imgLogo: "../imgs/logo.png",
+        imgUser: "../imgs/profileImage.png",
+        userProfile: "user.html",
+        chatPage: "../chat/chat.html",
+        Home: "../index.html",
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="user.js"></script>
+  </body>
+</html>
