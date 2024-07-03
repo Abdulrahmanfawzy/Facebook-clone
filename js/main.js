@@ -16,6 +16,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 import { postStructure } from "../posts/post.js";
 
+if (user_id == null) {
+  window.location.href = "/Facebook-clone/register/login/login.html";
+}
+
 const storage = getStorage();
 const db = getDatabase();
 const dbRef = ref(getDatabase());
@@ -23,9 +27,7 @@ let user_id = window.localStorage.getItem("local_userId");
 let urlSearch = window.location.search;
 let urlObj = new URLSearchParams(urlSearch);
 let userIdUrl = urlObj.get("userId");
-if (user_id == null) {
-  window.location.href = "/Facebook-clone/register/login/login.html";
-}
+
 
 let friend_parent = document.querySelector(".friend_parent");
 let suggestions = document.querySelector("#suggestions");
