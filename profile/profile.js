@@ -6,6 +6,10 @@ import {
   child,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+if (!window.localStorage.getItem("local_userId")) {
+  window.location.href = "../Facebook-clone/register/login/login.html";
+}
+
 let user_id = window.localStorage.getItem("local_userId");
 let urlSearch = window.location.search;
 let urlObj = new URLSearchParams(urlSearch);
@@ -13,9 +17,6 @@ let userIdUrl = urlObj.get("userId");
 const db = getDatabase();
 const dbRef = ref(getDatabase());
 
-if (user_id == null) {
-  window.location.href = "../register/login/login.html";
-}
 
 function getUserData() {
   return new Promise((resolve, reject) => {
