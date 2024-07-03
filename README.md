@@ -8,6 +8,7 @@
 <li>User can upload profile image and cover image in his profile</li>
 <li>User can post text only or image only or text with image in each post </li>
 <li>User can share other friends posts to his profile</li>
+<li>User can write a post on any friend's account</li>
 <li>User can like and dislike post</li>
 <li>User can save post to his saved posts</li>
 <li>User can add posts to favourite posts to get them back</li>
