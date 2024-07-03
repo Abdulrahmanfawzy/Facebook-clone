@@ -629,7 +629,7 @@ emojiFunComment();
 
 document.addEventListener("click", (e) => logoutFun(e));
 
-function logoutFun(e) {
+function logoutFun(e) { 
   if (e.target.id == "logout") {
     window.localStorage.removeItem("local_userId");
     window.location.href = "/Facebook-clone/register/login/login.html";
