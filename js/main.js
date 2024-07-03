@@ -24,7 +24,7 @@ let urlSearch = window.location.search;
 let urlObj = new URLSearchParams(urlSearch);
 let userIdUrl = urlObj.get("userId");
 if (user_id == null) {
-  window.location.href = "../register/login/login.html";
+  window.location.href = "../Facebook-clone/register/login/login.html";
 }
 
 let friend_parent = document.querySelector(".friend_parent");
