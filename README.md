@@ -20,3 +20,11 @@
 <li>User can search on any friend in sadiqi social media app</li>
 <li>Saqiqi app has a chat app to let friends talk and share daily with each other</li>
 <li>In chat app you can search for any friend to react any friend easily</li>
+
+## tools and technologies
+<li>HTML5</li>
+<li>CSS3</li>
+<li>Javascript</li>
+<li>Bootstrap5</li>
+<li>Sweet alert</li>
+<li>Firebase</li>
