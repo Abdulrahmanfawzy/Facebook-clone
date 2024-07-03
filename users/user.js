@@ -19,6 +19,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 import { profileImagesFun } from "../profile/profile.js";
 
+if (!window.localStorage.getItem("local_userId")) {
+  window.location.href = "../Facebook-clone/register/login/login.html";
+}
+
 const db = getDatabase();
 const dbRef = ref(getDatabase());
 const storage = getStorage();
@@ -29,10 +33,6 @@ let urlObj = new URLSearchParams(urlSearch);
 let userIdUrl = urlObj.get("userId");
 let loading = document.querySelector(".loading");
 let profileImage = document.getElementById("profileImage");
-
-if (user_id == null) {
-  window.location.href = "../register/login/login.html";
-}
 
 profileImage.innerHTML = await profileImagesFun();
 
