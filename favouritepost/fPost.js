@@ -10,14 +10,15 @@ import {
   remove,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+if (!window.localStorage.getItem("local_userId")) {
+  window.location.href = "../Facebook-clone/register/login/login.html";
+}
+
 const db = getDatabase();
 const dbRef = ref(getDatabase());
 let user_id = window.localStorage.getItem("local_userId");
 let postFav = document.querySelector("#postFav");
 
-if (user_id == null) {
-  window.location.href = "../register/login/login.html";
-}
 
 function getDataFromsavedList() {
   return new Promise((resolve, reject) => {
