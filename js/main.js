@@ -17,7 +17,7 @@ import {
 import { postStructure } from "../posts/post.js";
 
 if (!window.localStorage.getItem("local_userId")) {
-  window.location.href = "https://abdulrahmanfawzy.github.io/register/login/login.html";
+  window.location.href = "/Facebook-clone/register/login/login.html";
 }
 
 const storage = getStorage();
