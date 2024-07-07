@@ -17,7 +17,8 @@ import {
 import { postStructure } from "../posts/post.js";
 
 if (!window.localStorage.getItem("local_userId")) {
-  window.location.href = "https://abdulrahmanfawzy.github.io/Facebook-clone/register/login/login.html";
+  window.location.href =
+    "https://abdulrahmanfawzy.github.io/Facebook-clone/register/login/login.html";
 }
 
 const storage = getStorage();
@@ -27,7 +28,6 @@ let user_id = window.localStorage.getItem("local_userId");
 let urlSearch = window.location.search;
 let urlObj = new URLSearchParams(urlSearch);
 let userIdUrl = urlObj.get("userId");
-
 
 let friend_parent = document.querySelector(".friend_parent");
 let suggestions = document.querySelector("#suggestions");
@@ -196,7 +196,7 @@ function handlePost() {
     } else {
       postInpt.style.height = "45px";
       postInpt.style.overflow = "hidden";
-      if(window.innerWidth <= 576){
+      if (window.innerWidth <= 576) {
         postInpt.style.height = "35px";
       }
     }
@@ -634,7 +634,7 @@ emojiFunComment();
 
 document.addEventListener("click", (e) => logoutFun(e));
 
-function logoutFun(e) { 
+function logoutFun(e) {
   if (e.target.id == "logout") {
     window.localStorage.removeItem("local_userId");
     window.location.href = "/Facebook-clone/register/login/login.html";
