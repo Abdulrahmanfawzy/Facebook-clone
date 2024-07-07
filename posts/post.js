@@ -51,11 +51,8 @@ function getUserDataToOther() {
   }
 }
 
-// console.log(user_id);
-
 let userData = await getUserData();
 let userDataToAnother = await getUserDataToOther();
-// console.log(userData);
 
 export function postStructure() {
   let box = `
