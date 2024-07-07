@@ -11,7 +11,7 @@ import {
 
   
 if (!window.localStorage.getItem("local_userId")) {
-  window.location.href = "../Facebook-clone/register/login/login.html";
+  window.location.href = "https://abdulrahmanfawzy.github.io/Facebook-clone/register/login/login.html";
 }
 
 const db = getDatabase();

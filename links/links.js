@@ -1,7 +1,7 @@
 let user_id = window.localStorage.getItem("local_userId");
 
 if (!window.localStorage.getItem("local_userId")) {
-  window.location.href = "../Facebook-clone/register/login/login.html";
+  window.location.href = "https://abdulrahmanfawzy.github.io/Facebook-clone/register/login/login.html";
 }
 
 export function leftLinks(obj){
