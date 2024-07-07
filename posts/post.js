@@ -6,14 +6,8 @@ import {
   child,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-<<<<<<< HEAD
-
-if (!window.localStorage.getItem("local_userId")) {
-  window.location.href = "../register/login/login.html";
-=======
 if (!window.localStorage.getItem("local_userId")) {
   window.location.href = "../Facebook-clone/register/login/login.html";
->>>>>>> 1d197ffa6f6f096408b409721156e4b455ba26d5
 }
 
 let user_id = window.localStorage.getItem("local_userId");
@@ -23,11 +17,6 @@ let userIdUrl = urlObj.get("userId");
 const db = getDatabase();
 const dbRef = ref(getDatabase());
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 1d197ffa6f6f096408b409721156e4b455ba26d5
 function getUserData() {
   return new Promise((resolve, reject) => {
     get(child(dbRef, `users/${user_id}/userAuth/`))
@@ -45,7 +34,7 @@ function getUserData() {
 }
 
 function getUserDataToOther() {
-  if(userIdUrl){
+  if (userIdUrl) {
     return new Promise((resolve, reject) => {
       get(child(dbRef, `users/${userIdUrl}/userAuth/`))
         .then((snapshot) => {
@@ -83,7 +72,7 @@ export function postStructure() {
               ? userIdUrl == user_id
                 ? "What's on your mind?"
                 : `Write something to ${
-                  userDataToAnother.username.split(" ")[0]
+                    userDataToAnother.username.split(" ")[0]
                   }...`
               : "What's on your mind?"
           }"></textarea>
