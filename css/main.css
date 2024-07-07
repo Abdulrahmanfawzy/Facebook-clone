@@ -165,7 +165,7 @@ header .search {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
   }
   .message {
     margin-right: 0px !important;
@@ -195,7 +195,11 @@ header .search {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
+  }
+  header .logo img {
+    width: 100px;
+    margin-top: 7px;
   }
   .message {
     margin-right: 0px !important;
@@ -210,7 +214,13 @@ header .search {
   margin: auto;
   margin-top: 100px;
 }
-.left_items_parent{
+
+@media (max-width: 576px) {
+  .container_section {
+    width: 100%;
+  }
+}
+.left_items_parent {
   position: sticky;
   top: 80px;
   left: 20px;
@@ -366,14 +376,19 @@ a.marketplace i {
   display: none;
 }
 
-@media(max-width: 576px){
-  #emojis{
-    left: -90%;
+@media (max-width: 576px) {
+  #emojis {
+    left: -50%;
+    width: 250px;
+  }
+  .item_parent {
+    padding: 20px 15px;
+    padding-bottom: 5px;
   }
 }
 
-@media(max-width: 360px){
-  #emojis{
+@media (max-width: 360px) {
+  #emojis {
     left: -60%;
     width: 200px;
     height: 150px;
@@ -408,6 +423,20 @@ a.marketplace i {
 .text_post {
   width: 100%;
   text-align: center;
+}
+
+@media (max-width: 576px) {
+  #postInpt {
+    height: 35px;
+    padding: 8px 20px;
+    font-size: 12px !important;
+  }
+  #postInpt::placeholder {
+    font-size: 12px !important;
+  }
+  .open_profile {
+    font-size: 12px !important;
+  }
 }
 
 .imageUploadDiv img {
@@ -587,8 +616,14 @@ a.marketplace i {
 
 @media (max-width: 400px) {
   header .logo img {
-    width: 90px;
+    width: 120px;
     margin-top: 7px;
+  }
+  #header .content {
+    width: 95%;
+  }
+  #barMenu {
+    font-size: 18px;
   }
   .profile {
     align-items: center;
@@ -627,8 +662,8 @@ a.marketplace i {
   text-decoration: underline;
 }
 .post_title img {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
   object-position: 25% 20%;
   border-radius: 50%;
@@ -639,6 +674,37 @@ a.marketplace i {
 .post_title h6 {
   font-size: 19px;
 }
+
+@media (max-width: 576px) {
+  .postItemInUser {
+    padding: 0;
+  }
+  .postItemInUser {
+    border-radius: 0;
+  }
+  .postItemFlex {
+    margin: 10px;
+    padding-top: 20px;
+  }
+  .post_text {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  }
+  .numbers {
+    margin: 0 10px;
+  }
+  .commentFlex {
+    margin: 10px;
+  }
+  #send_comment {
+    padding: 12px !important;
+    font-size: 14px;
+  }
+  .comment_img {
+    margin-right: 10px !important;
+  }
+}
+
 .icons {
   display: flex;
   gap: 7px;
@@ -671,6 +737,15 @@ a.marketplace i {
   vertical-align: middle;
 }
 
+@media (max-width: 576px) {
+  .post_image img {
+    height: auto;
+    max-height: 430px;
+    object-position: 0% top;
+    border-radius: 0;
+  }
+}
+
 .inter_icons {
   cursor: pointer;
   padding: 10px;
@@ -697,6 +772,10 @@ a.marketplace i {
 @media (max-width: 576px) {
   .swal2-popup.swal2-toast.swal2-show {
     top: 140px;
+  }
+  .icons i {
+    padding-left: 5px;
+    margin: 0;
   }
 }
 
@@ -822,6 +901,12 @@ a.marketplace i {
   font-size: 13px;
 }
 
+@media (max-width: 576px) {
+  .comments_added {
+    margin: 10px;
+  }
+}
+
 .friends_zone img {
   width: 35px;
   height: 35px;
@@ -921,19 +1006,20 @@ a.marketplace i {
   padding: 5px 15px;
   border-radius: 5px;
   border: 1px solid transparent;
-  transition: .2s border;
+  transition: 0.2s border;
 }
-#profile_follow:hover{
+#profile_follow:hover {
   border-color: #2c8de2;
 }
-#usernameAnother span{
-  width: fit-content;
+#usernameAnother span {
+  
+  flex-wrap: wrap;
 }
 @media (max-width: 576px) {
   #usernameAnother {
     font-size: 15px;
   }
-  #usernameAnother span{
+  #usernameAnother span {
     width: 100px;
   }
   #usernameAnother i {
@@ -998,20 +1084,29 @@ a.marketplace i {
 
 @media (max-width: 390px) {
   #usernameAnother {
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: start !important;
-    align-items: flex-start !important;
+    align-items: center !important;
   }
   #usernameAnother i {
-    margin-left: 0 !important;
+    margin-left: -15px !important;
   }
   .icons {
-    flex-direction: column;
-    margin-top: 0px;
+    margin-top: -15px;
     text-align: center;
   }
   .icons i {
     margin-left: 0 !important;
+  }
+}
+
+@media(max-width: 350px){
+  #usernameAnother{
+    flex-direction: column;
+    justify-content: flex-start!important;
+  }
+  #usernameAnother i{
+    margin-left: -80px!important;
   }
 }
 
@@ -1148,7 +1243,7 @@ a.marketplace i {
     position: fixed;
     top: -16px;
     width: 60%;
-    right: -60%;
+    right: -80%;
     border-radius: 0;
     min-height: 100vh !important;
     z-index: 5;
@@ -1161,15 +1256,24 @@ a.marketplace i {
   #suggestions {
     top: 150px;
   }
+  .titleChatName {
+    font-size: 15px;
+  }
+  .btnChatName {
+    font-size: 15px;
+  }
+  .chat_title {
+    padding: 10px !important;
+  }
 }
 
 @media (max-width: 576px) {
   .friends_zone section {
     font-size: 13px;
-    width: 70px;
+    width: fit-content;
   }
   .friend_parent {
-    width: 60%;
+    width: 80%;
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
@@ -1188,6 +1292,33 @@ a.marketplace i {
   }
   #suggestions {
     top: 166px;
+    font-size: 11px;
+    left: -53px;
+  }
+
+  .loveBtnClass {
+    font-size: 14px;
+  }
+  .loveBtnClass i {
+    font-size: 14px;
+  }
+  .loveBtnClass span {
+    margin-left: 0px !important;
+  }
+  .shareBtn {
+    font-size: 14px;
+  }
+  .shareBtn i {
+    font-size: 14px;
+  }
+  .commentBtnClass {
+    font-size: 14px;
+  }
+  .commentBtnClass span {
+    margin-left: 5px !important;
+  }
+  .commentBtnClass i {
+    font-size: 14px;
   }
 }
 
@@ -1599,7 +1730,7 @@ a.marketplace i {
 }
 @media (max-width: 768px) {
   #users {
-    height: 62vh;
+    height: 100vh;
   }
   #image_talk {
     width: 90% !important;
@@ -1660,6 +1791,7 @@ a.marketplace i {
   background-image: url(../imgs/dots.png);
   background-size: contain;
   background-position: center;
+  display: block;
 }
 .chat_title {
   padding: 20px;
@@ -1689,8 +1821,10 @@ a.marketplace i {
   background: #fff;
   padding: 20px 0;
   width: 100%;
-  padding: 20px;
+  padding: 15px 20px;
   display: none;
+  position: absolute;
+  bottom: 0;
 }
 #smile_icon {
   width: 35px;
@@ -1756,8 +1890,27 @@ a.marketplace i {
   padding: 20px;
   height: 75vh;
   overflow: auto;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
+@media (max-width: 768px) {
+  #chat_div {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+  }
+  #messages {
+    padding-bottom: 10px;
+  }
+  #chat_at_bottom {
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
 .emoji_icons {
   position: absolute;
   width: 300px;
@@ -1842,14 +1995,14 @@ a.marketplace i {
   margin-top: -15px;
 }
 
-.noPosts{
+.noPosts {
   width: 100%;
   height: 260px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #FFF;
+  background: #fff;
   border-radius: 10px;
   font-weight: 500;
   color: #999;

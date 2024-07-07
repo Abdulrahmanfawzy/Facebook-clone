@@ -296,10 +296,10 @@ async function printPostInHome(post) {
           post[item].shared
             ? `
           <div>
-          <div class=" d-flex justify-content-between align-items-center">
+          <div class="postItemFlex d-flex justify-content-between align-items-center">
               <a href="../users/user.html?userId=${
                 post[item].userIdShared
-              }" class="post_title d-flex align-items-center gap-3">
+              }" class="post_title d-flex align-items-center gap-2">
               <img src=${
                  post[item].oraginal_image
                   ?  post[item].oraginal_image
@@ -328,10 +328,10 @@ async function printPostInHome(post) {
           <div class="${
             post[item].shared ? "border mt-2 pt-3 rounded-2" : ""
             }">
-            <div class="${post[item].shared ? "py-1 px-2" : ""} d-flex justify-content-between align-items-center">
+            <div class="${post[item].shared ? "py-1 px-2" : ""} postItemFlex d-flex justify-content-between align-items-center">
                 <a href="../users/user.html?userId=${
                   post[item].userid
-                }" class="post_title d-flex align-items-center gap-3">
+                }" class="post_title d-flex align-items-center gap-2">
                 <img src=${
                   post[item].imageUrl
                     ? post[item].imageUrl
@@ -348,7 +348,7 @@ async function printPostInHome(post) {
                   post[item].shared
                     ? ""
                     : `
-                    <div class="icons">
+                    <div class="icons gap-1">
                       <i id="favourite_icon" data-favoure_id="${item}" data-user_id_f_post="${
                     post[item].userid
                       }" class="fa-regular fa-star me-1"></i>
@@ -366,7 +366,7 @@ async function printPostInHome(post) {
 
             
             <div class="post_text mt-3">
-                <section class="${post[item].shared ? "py-1 px-2" : ""}">
+                <section class="${post[item].shared ? "" : ""}">
                   ${
                     post[item].postText
                       ? `${
@@ -412,14 +412,14 @@ async function printPostInHome(post) {
           </div>
 
           <div class="iteractive border-top d-flex justify-content-between align-items-center mt-2">
-              <div class="inter_icons w-100">
+              <div class="inter_icons loveBtnClass w-100">
                <i id="likeInHome" data-user_id_f_post_home="${
                  post[item].userid
                }" data-love_in_database_home="${
-      post[item].postId
-    }" data-lovenumber="${count}" class="fa-regular fa-heart me-1 iconLoves"></i> Love
+                    post[item].postId
+                  }" data-lovenumber="${count}" class="fa-regular fa-heart me-1 iconLoves"></i> Love
               </div>
-              <div data-counter="${count}" data-commented="commented" class="d-flex inter_icons align-items-center justify-content-center">
+              <div data-counter="${count}" data-commented="commented" class="d-flex inter_icons align-items-center justify-content-center commentBtnClass">
                 <i data-counter="${count}" data-commented="commented" id="comment" class="fa-regular fa-comment"></i>
                 <span data-counter="${count}" data-commented="commented" class="ms-2">Comment</span>
               </div>
@@ -429,7 +429,7 @@ async function printPostInHome(post) {
                 <div class="d-flex inter_icons align-items-center justify-content-center ">
               <span data-share="share" data-user_id_share="${
                 post[item].userid
-              }" data-share_btn="${post[item].postId}" class="ms-2">
+              }" data-share_btn="${post[item].postId}" class="ms-2 shareBtn">
                 <i id="share" data-user_id_share="${
                   post[item].userid
                 }" data-share_in_database="${
@@ -445,7 +445,7 @@ async function printPostInHome(post) {
          
           <div class="comment_section gap-2 mt-1 mb-2">
             <div class="commentInputText">
-              <div class="d-flex align-items-center justify-content-between">
+              <div class="commentFlex d-flex align-items-center justify-content-between">
 
                 <div class="comment_img me-3">
                   <img src="${

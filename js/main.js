@@ -16,6 +16,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 import { postStructure } from "../posts/post.js";
 
+if (!window.localStorage.getItem("local_userId")) {
+  window.location.href = "../register/login/login.html";
+}
+
 const storage = getStorage();
 const db = getDatabase();
 const dbRef = ref(getDatabase());
@@ -23,9 +27,7 @@ let user_id = window.localStorage.getItem("local_userId");
 let urlSearch = window.location.search;
 let urlObj = new URLSearchParams(urlSearch);
 let userIdUrl = urlObj.get("userId");
-if (user_id == null) {
-  window.location.href = "../register/login/login.html";
-}
+
 
 let friend_parent = document.querySelector(".friend_parent");
 let suggestions = document.querySelector("#suggestions");
@@ -34,23 +36,25 @@ let suggest_overlay = document.querySelector("#suggest_overlay");
 document.addEventListener("click", (e) => {
   if (e.target.id == "suggest_overlay") {
     suggest_overlay.style.display = "none";
-    friend_parent.style.right = "-60%";
+    friend_parent.style.right = "-80%";
     suggestions.innerHTML = "suggestions";
-    suggestions.style.left = "-74px";
+    suggestions.style.left = "-53px";
   }
 });
 
 if (suggestions) {
   suggestions.addEventListener("click", (e) => {
     if (friend_parent.style.right == "0px") {
-      friend_parent.style.right = "-60%";
+      friend_parent.style.right = "-80%";
       suggestions.innerHTML = "suggestions";
-      suggestions.style.left = "-74px";
+      suggestions.style.left = "-53px";
+      suggestions.style.padding = "8px 10px";
       suggest_overlay.style.display = "none";
     } else {
       friend_parent.style.right = "0px";
       suggestions.innerHTML = "close";
       suggestions.style.left = "-47px";
+      suggestions.style.padding = "10px 20px";
       suggest_overlay.style.display = "block";
     }
   });
@@ -192,6 +196,9 @@ function handlePost() {
     } else {
       postInpt.style.height = "45px";
       postInpt.style.overflow = "hidden";
+      if(window.innerWidth <= 576){
+        postInpt.style.height = "35px";
+      }
     }
   }
 

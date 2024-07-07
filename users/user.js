@@ -333,10 +333,10 @@ async function handlePrintPosts(funParam) {
           sortedData[post].shared
             ? `
           <div>
-          <div class=" d-flex justify-content-between align-items-center">
+          <div class="postItemFlex d-flex justify-content-between align-items-center">
               <a href="../users/user.html?userId=${
                 userAuth.user_id
-              }" class="post_title d-flex align-items-center gap-3">
+              }" class="post_title d-flex align-items-center gap-2">
               <img src=${
                 userAuth.imageUrl
                   ? userAuth.imageUrl
@@ -364,10 +364,10 @@ async function handlePrintPosts(funParam) {
             : ""
         }
         <div class="${
-          sortedData[post].shared ? "border mt-2 pt-3 rounded-2" : ""
+          sortedData[post].shared ? "border mx-2 mt-2 pt-3 rounded-2" : ""
           }">
-          <div class=" ${sortedData[post].shared ? "py-1 px-2" : ""} d-flex justify-content-between align-items-center">
-              <a href="../users/user.html?userId=${sortedData[post].userIdShared ? sortedData[post].userIdShared : userAuth.user_id}" class="post_title d-flex align-items-center gap-3">
+          <div class=" ${sortedData[post].shared ? "py-0 px-2" : ""} postItemFlex d-flex justify-content-between align-items-center">
+              <a href="../users/user.html?userId=${sortedData[post].userIdShared ? sortedData[post].userIdShared : userAuth.user_id}" class="post_title d-flex align-items-center gap-2">
               <img src=${
                 sortedData[post].shared
                   ? sortedData[post].sharedImage
@@ -403,18 +403,18 @@ async function handlePrintPosts(funParam) {
               
           </div>
           
-          <div class="post_text mb-3 mt-3">
-                    <section class="${sortedData[post].shared ? "py-1 px-2" : ""}">
-                  ${
-                    sortedData[post].postText
-                      ? `${
-                          arabicRegex.test(sortedData[post].postText)
-                            ? `<section dir="rtl">${sortedData[post].postText}</section>`
-                            : sortedData[post].postText
-                        }`
-                      : ""
-                  }
-              </section>
+          <div class="post_text mb-2 mt-3">
+            <section class="${sortedData[post].shared ? "px-2" : ""}">
+              ${
+                sortedData[post].postText
+                  ? `${
+                      arabicRegex.test(sortedData[post].postText)
+                        ? `<section dir="rtl">${sortedData[post].postText}</section>`
+                        : sortedData[post].postText
+                    }`
+                  : ""
+              }
+            </section>
           </div>
           
           ${
@@ -450,12 +450,12 @@ async function handlePrintPosts(funParam) {
         </div>
 
         <div class="iteractive border-top d-flex justify-content-between align-items-center mt-2">
-            <div class="inter_icons w-100">
+            <div class="inter_icons loveBtnClass w-100">
              <i id="like" data-love_in_database="${
                sortedData[post].postId
              }" data-lovenumber="${count}" class="fa-regular fa-heart me-1"></i> Love
             </div>
-            <div data-counter="${count}" data-commented="commented" class="d-flex inter_icons align-items-center justify-content-center">
+            <div data-counter="${count}" data-commented="commented" class="d-flex inter_icons align-items-center justify-content-center commentBtnClass">
               <i id="comment" data-counter="${count}" data-commented="commented" class="fa-regular fa-comment"></i>
               <span data-counter="${count}" data-commented="commented" class="ms-2">Comment</span>
             </div>
@@ -477,7 +477,7 @@ async function handlePrintPosts(funParam) {
            
             <div class="commentInputText">
 
-              <div class="d-flex align-items-center justify-content-between">
+              <div class="commentFlex d-flex align-items-center justify-content-between">
                 <div class="comment_img me-3">
                   <img src="${
                     userData.imageUrl

@@ -125,6 +125,7 @@ let emoji_icons = document.querySelector(".emoji_icons");
 let emoji;
 document.addEventListener("click", (e) => {
   if (e.target.dataset.id_of_user) {
+    displayChat();
     getIdOfUser(e.target.dataset.id_of_user);
     getMessages(e.target.dataset.id_of_user);
     chat_at_bottom.style.display = "block";
@@ -134,6 +135,22 @@ document.addEventListener("click", (e) => {
     }, 200);
   }
 });
+
+function displayChat(){
+  let chat_div = document.getElementById("chat_div");
+  let backBtn = document.getElementById("backBtn");
+  chat_div.style.display = "block";
+  document.addEventListener("click",(e)=>{
+    if(e.target.classList.contains("backBtn")){
+      chat_div.style.display = "none";
+    }
+  })
+  // console.log(backBtn);
+  // backBtn.addEventListener("click" , ()=>{
+  //   chat_div.style.display = "none";
+  // })
+}
+
 
 smile_icon.addEventListener("click", () => {
   if (emoji_icons.style.display == "block") {
@@ -194,6 +211,7 @@ async function printSpecificUserInChat(dataOfUser) {
   box = `
     <div class="chat_title border-bottom pb-3 d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light d-block d-md-none backBtn"><i class="backBtn fa-solid fa-angle-left"></i></button>
             <a href="../users/user.html?userId=${userAuth.user_id}">
                 <img class="rounded-circle" src="${
                   userAuth.imageUrl
@@ -204,11 +222,11 @@ async function printSpecificUserInChat(dataOfUser) {
             <a href="../users/user.html?userId=${
               userAuth.user_id
             }" class="text-decoration-none">
-                <h4 class="mb-0 text-dark">${userAuth.username}</h4>
+                <h4 class="mb-0 text-dark titleChatName">${userAuth.username}</h4>
                 <section><span class="active"></span>Active Now</section>
             </a>
         </div>
-        <button class="btn btn-light">
+        <button class="btn btn-light btnChatName">
             ${arr.length > 0 ? `${arr.length} Following` : `No Following`}
         </button>
     </div>

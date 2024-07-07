@@ -48,7 +48,7 @@ export function leftLinks(obj){
           </div>
           Pages
         </a>
-        <a href="#" id="logout" class="marketplace">
+        <a href="" id="logout" class="marketplace">
           <div class="text-center d-inline-block">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
           </div>

@@ -6,6 +6,11 @@ import {
   child,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+
+if (!window.localStorage.getItem("local_userId")) {
+  window.location.href = "../register/login/login.html";
+}
+
 let user_id = window.localStorage.getItem("local_userId");
 let urlSearch = window.location.search;
 let urlObj = new URLSearchParams(urlSearch);
@@ -13,9 +18,7 @@ let userIdUrl = urlObj.get("userId");
 const db = getDatabase();
 const dbRef = ref(getDatabase());
 
-if (user_id == null) {
-  window.location.href = "../register/login/login.html";
-}
+
 
 function getUserData() {
   return new Promise((resolve, reject) => {
@@ -60,13 +63,13 @@ let userDataToAnother = await getUserDataToOther();
 export function postStructure() {
   let box = `
   <div class="item_parent">
-  <div class="share_parent border-bottom d-flex gap-3 align-items-start">
+  <div class="share_parent border-bottom d-flex gap-2 align-items-start">
       <div class="share_img">
           <img src="${
             userData.imageUrl ? userData.imageUrl : "../imgs/profileImage.png"
           }" alt="">
       </div>
-      <div class="text_post">
+      <div class="text_post mt-2">
           <textarea class="border" id="postInpt" placeholder="${
             userIdUrl
               ? userIdUrl == user_id
