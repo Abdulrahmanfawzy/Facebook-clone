@@ -16,14 +16,14 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 
+if (!window.localStorage.getItem("local_userId")) {
+  window.location.href = "../Facebook-clone/register/login/login.html";
+}
+
 const storage = getStorage();
 const db = getDatabase();
 const dbRef = ref(getDatabase());
 let user_id = window.localStorage.getItem("local_userId");
-
-if (user_id == null) {
-  window.location.href = "../register/login/login.html";
-}
 
 function getAllUsersFun() {
   return new Promise((resolve, reject) => {

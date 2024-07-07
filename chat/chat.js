@@ -9,6 +9,11 @@ import {
   onChildAdded,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+  
+if (!window.localStorage.getItem("local_userId")) {
+  window.location.href = "../Facebook-clone/register/login/login.html";
+}
+
 const db = getDatabase();
 const dbRef = ref(getDatabase());
 let user_id = window.localStorage.getItem("local_userId");
@@ -21,10 +26,6 @@ let search_users = document.getElementById("search_users");
 let all_users_search = document.getElementById("all_users_search");
 let container;
 let loading = document.querySelector(".loading");
-  
-if (user_id == null) {
-  window.location.href = "../register/login/login.html";
-}
 
 function getAllusersFun() {
   return new Promise((resolve) => {
