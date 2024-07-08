@@ -60,7 +60,7 @@ export function postStructure() {
   <div class="share_parent border-bottom d-flex gap-2 align-items-start">
       <div class="share_img">
           <img src="${
-            userData.imageUrl ? userData.imageUrl : "../imgs/profileImage.png"
+            userData.imageUrl ? userData.imageUrl : "imgs/profileImage.png"
           }" alt="">
       </div>
       <div class="text_post mt-2 mt-md-0">
