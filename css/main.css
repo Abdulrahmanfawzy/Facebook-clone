@@ -1463,6 +1463,12 @@ a.marketplace i {
   letter-spacing: 1px;
 }
 
+@media(max-width: 768px){
+  .firstView {
+    height: 80vh;
+  }
+}
+
 .dataFav {
   width: 100%;
   text-align: center;

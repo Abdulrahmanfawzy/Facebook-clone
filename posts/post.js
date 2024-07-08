@@ -63,7 +63,7 @@ export function postStructure() {
             userData.imageUrl ? userData.imageUrl : "../imgs/profileImage.png"
           }" alt="">
       </div>
-      <div class="text_post mt-2">
+      <div class="text_post mt-2 mt-md-0">
           <textarea class="border" id="postInpt" placeholder="${
             userIdUrl
               ? userIdUrl == user_id
