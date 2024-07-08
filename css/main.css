@@ -1465,7 +1465,7 @@ a.marketplace i {
 
 @media(max-width: 768px){
   .firstView {
-    height: 80vh;
+    height: 56vh;
   }
   .share_img img{
     width: 40px;
