@@ -84,6 +84,14 @@ function getUsersFromDatabase() {
 
 let box;
 
+let imageSrc;
+
+if(window.location.pathname.includes("/users/user.html")){
+  imageSrc = "../imgs/profileImage.png";
+}else{
+  imageSrc = "imgs/profileImage.png";
+}
+
 let friends_zone = document.querySelector(".friends_zone");
 let arr = [];
 async function addUsersToPage() {
@@ -108,7 +116,7 @@ async function addUsersToPage() {
             <img src="${
               user.userAuth.imageUrl
                 ? user.userAuth.imageUrl
-                : "../imgs/profileImage.png"
+                : imageSrc
             }" alt="">
               <section>
               ${user.userAuth.username}
