@@ -315,13 +315,12 @@ function timeAgo(timestamp) {
 const arabicRegex =
   /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
 async function handlePrintPosts(funParam) {
-  noPosts.style.display = "none";
   let count = 0;
-
   post_container.innerHTML = "";
   let { posts } = await funParam();
   let { userAuth } = await funParam();
   if (posts) {
+    noPosts.style.display = "none";
     let dataArray = Object.entries(posts);
     dataArray.sort((a, b) => b[1].createdAt - a[1].createdAt);
     let sortedData = Object.fromEntries(dataArray);
