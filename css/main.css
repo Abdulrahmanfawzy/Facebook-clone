@@ -390,8 +390,8 @@ a.marketplace i {
 
 @media (max-width: 360px) {
   #emojis {
-    left: -60%;
-    width: 200px;
+    left: -50%;
+    width: 210px;
     height: 150px;
     font-size: 17px;
   }
@@ -1455,6 +1455,12 @@ a.marketplace i {
   padding: 0 15px;
 }
 
+@media(max-width: 576px){
+  .followerBack:first-child{
+    margin: 10px;
+  }
+}
+
 .firstView {
   width: 100%;
   background: #fff;
@@ -1929,7 +1935,7 @@ a.marketplace i {
   }
   #chat_at_bottom {
     padding: 15px 20px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
   }
 }
