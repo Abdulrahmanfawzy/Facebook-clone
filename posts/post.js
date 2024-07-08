@@ -54,6 +54,14 @@ function getUserDataToOther() {
 let userData = await getUserData();
 let userDataToAnother = await getUserDataToOther();
 
+let imageSrc;
+
+if(window.location.pathname.includes("/users/user.html")){
+  imageSrc = "../imgs/profileImage.png";
+}else{
+  imageSrc = "imgs/profileImage.png";
+}
+
 export function postStructure() {
   let box = `
   <div class="item_parent">
