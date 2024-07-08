@@ -59,7 +59,7 @@ export function headerFun(obj) {
                   </span>
                 </a>
                 <a href="${obj.userProfile}?userId=${user_id}">
-                    <img src="${(userData.imageUrl)?userData.imageUrl:'../imgs/profileImage.png'}" alt="">
+                    <img src="${(userData.imageUrl)?userData.imageUrl:obj.imgUser}" alt="">
                 </a>
                 <div class="bars">
                     <i id="barMenu" class="fa-solid fa-bars-staggered"></i>
