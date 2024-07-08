@@ -891,6 +891,7 @@ function addImageUrlToUserAuth(downloadURL) {
     imageUrl: downloadURL,
   }).then((result) => {
     sweetAlert("success", "Image profile is updated successfully");
+    location.reload();
   });
 }
 let commentInpt = document.querySelectorAll(".commentInpt");
