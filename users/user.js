@@ -890,7 +890,7 @@ function addImageUrlToUserAuth(downloadURL) {
   update(ref(db, `users/${user_id}/userAuth/`), {
     imageUrl: downloadURL,
   }).then((result) => {
-    sweetAlert("success", "post unsaved");
+    sweetAlert("success", "Image profile is updated successfully");
   });
 }
 let commentInpt = document.querySelectorAll(".commentInpt");
