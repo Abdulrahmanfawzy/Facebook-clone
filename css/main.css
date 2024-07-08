@@ -6,6 +6,7 @@
 }
 body {
   background: #f3f6f8;
+  overflow-x: hidden;
 }
 #header {
   background-color: #fff;
@@ -224,7 +225,7 @@ header .search {
   position: sticky;
   top: 80px;
   left: 20px;
-  z-index: 5;
+  z-index: 4;
 }
 .left_items {
   border-radius: 10px;
@@ -1012,7 +1013,6 @@ a.marketplace i {
   border-color: #2c8de2;
 }
 #usernameAnother span {
-  
   flex-wrap: wrap;
 }
 @media (max-width: 576px) {
@@ -1100,13 +1100,13 @@ a.marketplace i {
   }
 }
 
-@media(max-width: 350px){
-  #usernameAnother{
+@media (max-width: 350px) {
+  #usernameAnother {
     flex-direction: column;
-    justify-content: flex-start!important;
+    justify-content: flex-start !important;
   }
-  #usernameAnother i{
-    margin-left: -80px!important;
+  #usernameAnother i {
+    margin-left: -80px !important;
   }
 }
 
@@ -1343,7 +1343,17 @@ a.marketplace i {
   background: #fff;
   border-radius: 10px;
   padding: 20px;
+  height: 80vh;
+  overflow: auto;
 }
+
+@media (max-width: 768px) {
+  .allUsers {
+    padding: 30px;
+    margin-top: 10px;
+  }
+}
+
 #all_users {
   width: 100%;
 }
@@ -1463,16 +1473,16 @@ a.marketplace i {
   letter-spacing: 1px;
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px) {
   .firstView {
     height: 56vh;
   }
-  .share_img img{
+  .share_img img {
     width: 40px;
     height: 40px;
   }
-  .text_post{
-    margin-top: 4px!important;
+  .text_post {
+    margin-top: 4px !important;
   }
 }
 

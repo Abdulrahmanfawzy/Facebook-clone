@@ -47,7 +47,7 @@ async function addUsersToPage() {
   for (const user in getAllUsers) {
     if (user != user_id) {
       box = `
-            <div class="mb-1 mt-3 freind gap-3 d-flex justify-content-between align-items-center">
+            <div class="mb-1 mt-1 freind gap-3 d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">
                 <a class="text-dark d-flex align-items-center text-decoration-none" href="../users/user.html?userId=${
                   getAllUsers[user].userAuth.user_id
